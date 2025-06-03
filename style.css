@@ -1,0 +1,308 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html,body{
+    height:100%;
+    background-size:cover;
+    backdrop-filter:blur(50px) ;
+    overflow:hidden;
+}
+.upper-container{
+    width:80%;
+    height:80%;
+    padding-left:10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.album-container{
+    background-color:black  ;
+    width: 500px;
+    height:500px;
+    /* margin-left:20%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border-radius: 500px;
+    animation:spin 3s linear infinite;
+    animation-play-state:paused;
+}
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.album-img{
+    width:250px;
+    height:250px;
+    background-image: url('./img/record0.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 250px;
+}
+/* .introduction-container{
+    background-color: green;
+} */
+.introduction-title{
+    font-size: 4rem; 
+    color: white;
+}
+.introduction-text{
+    color: rgb(171,171,171);
+    font-size:medium;
+}
+
+/* 下半部分 */
+.audio-box{
+    height: 20%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.audio-container{
+    width:90%;
+    height:20%;
+}
+/* 进度条 */
+.a-progress{
+    width:100%;
+    border-radius: 10px;
+    margin-bottom:10px;
+}
+.pgs-total{
+    width:100%;
+    height:16px;
+    border-radius: 10px;
+    position:relative;
+    background-color: gray;
+}
+/* 进度条的绿色部分 */
+/* .pgs-play::before{
+    content:'';
+    position:absolute;
+    top:7px;
+    bottom:7px;
+    left:0;
+    right:0;
+    background-color: green;
+    border-radius: 10px;
+    z-index:1;
+} */
+.pgs-play{
+    height:100%;
+    border-radius:10px;
+    background-color: green;
+    width:0%;
+}
+.pgs-play::after{
+    content:'';
+    position:absolute;
+    top:7px;
+    bottom:7px;
+    left:0;
+    right:0;
+    background-color: white;
+    border-radius: 10px;
+    z-index: -1;
+}
+/* 下排控制按钮 */
+.a-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 播放时间 */
+.time-container{
+    color: aliceblue;
+    font-weight:bold;
+}
+.center-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.center-icon{
+    width:30px;
+    height:30px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.mode{
+    background-image: url('./img/mode1.png');
+    background-size: 100%;
+}
+.s-left{
+    background-image: url('./img/上一首.png') ;
+    background-size: 100%;
+}
+.icon-play{
+    width:50px;
+    height:50px;
+    background-image: url('./img/继续播放.png');
+    background-size: 100%;
+}
+.icon-pause{
+    width:50px;
+    height:50px;
+    background-image: url('./img/暂停.png');
+    background-size: 100%;
+}
+.s-right{
+    background-image: url('./img/下一首.png');
+    background-size: 100%;
+}
+.volumn{
+    background-image: url('./img/音量.png');
+    background-size: 100%;
+}
+/* 右下角区域按钮 */
+.bottom-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.button-icon{
+    width:25px;
+    height:25px
+}
+.button-icon:hover{
+    opacity: 0.7;
+}
+.button-icon:active{
+    opacity: 0.5;
+}
+.list{
+    background-image: url('./img/列表.png');
+    background-size: 100%;
+}
+.speed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
+.speed:hover{
+    opacity: 0.7;
+}
+.speed:active{
+    opacity: 0.5;
+}
+.MV{
+    background-image: url('./img/MV.png');
+    background-size: 100%;
+}
+video{
+    display: none  ;
+    width: 300px; /* 设置视频宽度 */
+    height: auto; /* 根据宽度自动调整高度 */
+}
+
+/* 鼠标悬停效果 */
+.center-icon:hover {
+    opacity: 0.7;
+}
+.center-icon:active {
+    opacity: 0.5;
+}
+
+/* 关音乐列表 */
+.close-list{
+    display:none;
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    /* background-color: pink; */
+    top:0;
+    left:0;
+}
+.music-list{
+    display:none;
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(29,40,32);
+    top:0;
+    right:0;
+    z-index: 2;
+}
+.music-list-container{
+    width:100%;
+}
+.music-list-title{
+    font-weight:300;
+    font-size:2rem;
+    color: white;
+    padding:10% 15% 0 15%;
+}
+.line{
+    height:1px;
+    width:70%;
+    border:none;
+    border-top:1px dashed gray;
+}
+.all-list div{
+    height:50px;
+    line-height:50px;
+    color: white;
+    font-weight:300;
+    padding: 0 15% 0 15%;
+}
+.all-list div:hover{
+    background-color: gray;
+}
+
+#volumn-togger{
+    width:100px;
+    height:5px;
+    appearance: none;
+    background-color: #dcdcdc;
+    outline:none;
+    border-radius: 15px;
+    overflow:hidden;
+    box-shadow:inset 0 0 5px #dcdcdc;
+}
+#volumn-togger::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:1px;
+    height:5px;
+    border-radius: 50%;
+    background: #42b680;
+    cursor:pointer;
+    border:4px solid #fff;
+    box-shadow:-407px 0 0 400px #42b680;
+}
+
+/* 音乐列表展开 */
+@keyframes showAni{
+    /* 初始状态 */
+    from{
+        transform:translate(100%);
+    }
+    /* 结束状态 */
+    to{
+        transform: translate(0%);
+    }
+}
+.music-list-show{
+    animation:showAni 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes hideAni{
+    from{
+        transform:translate(0%);
+    }to{
+        transform: translate(100%);
+    }
+}
+.music-list-hide{
+    animation: hideAni 1s;
+    animation-fill-mode: forwards;
+}
