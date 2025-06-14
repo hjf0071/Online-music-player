@@ -150,7 +150,7 @@ s_right.addEventListener('click',function(){
 // 通过更改musicId来实现模式切换
 function changeModeByMusicId(){
     var current_music = musicId;
-    if(index_mode == 2){
+    if(index_mode == 1){
         musicId  = (current_music + 1) % total_music;
     }else if(index_mode == 3){
         while(musicId == current_music){//为什么大于等于不行
